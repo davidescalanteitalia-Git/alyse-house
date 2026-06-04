@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alyse House B&B – Massagno, Svizzera</title>
+  <meta name="description" content="Alyse House Bed & Breakfast – Un'esperienza di vacanza perfetta a Massagno, Ticino, Svizzera.">
+  <meta property="og:title" content="Alyse House B&B">
+  <meta property="og:description" content="Se stai cercando un'esperienza di vacanza perfetta con ricordi da custodire, sei nel posto giusto.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #2d2d2d;
+      background: #fff;
+      line-height: 1.6;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== COLORS ===== */
+    :root {
+      --green: #4e7c0f;
+      --green-dark: #3a5d0a;
+      --green-light: #e8f0d8;
+      --gray: #555;
+      --gray-dark: #2d2d2d;
+      --cream: #f9f8f4;
+      --white: #ffffff;
+    }
+
+    /* ===== LANGUAGE SWITCHER ===== */
+    #lang-bar {
+      background: var(--gray-dark);
+      padding: 8px 24px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 6px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .lang-btn {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.7);
+      padding: 3px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 12px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: all 0.2s;
+    }
+    .lang-btn.active, .lang-btn:hover {
+      background: var(--green);
+      border-color: var(--green);
+      color: #fff;
+    }
+
+    /* ===== NAVBAR ===== */
+    nav {
+      background: var(--white);
+      padding: 14px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 38px;
+      z-index: 999;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .nav-logo img {
+      height: 52px;
+      width: auto;
+    }
+    .nav-logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .nav-logo-text .name {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--gray-dark);
+      line-height: 1.1;
+    }
+    .nav-logo-text .sub {
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--gray);
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gray);
+      transition: color 0.2s;
+      letter-spacing: 0.3px;
+    }
+    .nav-links a:hover { color: var(--green); }
+    .nav-cta {
+      background: var(--green);
+      color: #fff !important;
+      padding: 9px 20px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--green-dark) !important; }
+
+    /* ===== HERO ===== */
+    #hero {
+      height: 90vh;
+      min-height: 560px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, #1a2e0a 0%, #2d4d10 50%, #1a2e0a 100%);
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1600&q=80&auto=format') center/cover no-repeat;
+      opacity: 0.45;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      padding: 0 20px;
+      max-width: 760px;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.4);
+      padding: 5px 18px;
+      border-radius: 20px;
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+      backdrop-filter: blur(6px);
+    }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 6vw, 72px);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    }
+    .hero-subtitle {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(14px, 2vw, 18px);
+      font-weight: 400;
+      font-style: italic;
+      opacity: 0.9;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+    .hero-location {
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      opacity: 0.75;
+      text-transform: uppercase;
+      margin-bottom: 36px;
+    }
+    .hero-location span { margin: 0 6px; opacity: 0.5; }
+    .hero-btns {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--green);
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--green-dark); transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 6px;
+      border: 2px solid rgba(255,255,255,0.7);
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.2s;
+      display: inline-block;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.1); }
+
+    /* scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.6);
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      animation: bounce 2s infinite;
+    }
+    .scroll-indicator::after {
+      content: '';
+      width: 1px;
+      height: 40px;
+      background: rgba(255,255,255,0.4);
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* ===== SECTION BASE ===== */
+    section { padding: 80px 24px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--green);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 4vw, 40px);
+      font-weight: 700;
+      color: var(--gray-dark);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .section-desc {
+      font-size: 15px;
+      color: var(--gray);
+      line-height: 1.8;
+      max-width: 600px;
+    }
+    .divider {
+      width: 48px;
+      height: 3px;
+      background: var(--green);
+      border-radius: 2px;
+      margin: 20px 0 32px;
+    }
+
+    /* ===== ABOUT ===== */
+    #about { background: var(--cream); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .about-img-wrap {
+      position: relative;
+    }
+    .about-img-main {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+    .about-img-accent {
+      position: absolute;
+      bottom: -24px;
+      right: -24px;
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 5px solid var(--white);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    }
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 36px;
+    }
+    .stat {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 12px;
+      color: var(--gray);
+      margin-top: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    /* ===== ROOMS / GALLERY ===== */
+    #rooms { background: #fff; }
+    .rooms-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 16px;
+    }
+    .room-card {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transition: transform 0.25s, box-shadow 0.25s;
+      background: var(--cream);
+    }
+    .room-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.14);
+    }
+    .room-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    .room-info {
+      padding: 20px;
+    }
+    .room-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--gray-dark);
+      margin-bottom: 6px;
+    }
+    .room-desc {
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+    .room-amenities {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .amenity-tag {
+      background: var(--green-light);
+      color: var(--green-dark);
+      font-size: 11px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-weight: 500;
+    }
+
+    /* ===== GALLERY ===== */
+    #gallery { background: var(--cream); }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 200px 200px;
+      gap: 12px;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .gallery-item {
+      overflow: hidden;
+      position: relative;
+    }
+    .gallery-item:first-child {
+      grid-row: 1 / 3;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+    .gallery-item:hover img { transform: scale(1.05); }
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(78, 124, 15, 0.0);
+      transition: background 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .gallery-item:hover .gallery-overlay {
+      background: rgba(78, 124, 15, 0.25);
+    }
+
+    /* ===== SERVICES ===== */
+    #services { background: var(--green-dark); color: #fff; }
+    #services .section-title { color: #fff; }
+    #services .section-label { color: #a8d072; }
+    #services .divider { background: #a8d072; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 12px;
+    }
+    .service-card {
+      text-align: center;
+      padding: 30px 20px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      transition: background 0.2s;
+    }
+    .service-card:hover { background: rgba(255,255,255,0.12); }
+    .service-icon { font-size: 36px; margin-bottom: 14px; }
+    .service-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .service-desc { font-size: 13px; opacity: 0.75; line-height: 1.6; }
+
+    /* ===== SOCIAL MEDIA ===== */
+    #social { background: #fff; }
+    .social-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 36px;
+    }
+    .social-platforms {
+      display: flex;
+      gap: 12px;
+    }
+    .social-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      border-radius: 24px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .social-pill:hover { opacity: 0.85; }
+    .social-pill.facebook { background: #1877F2; color: #fff; }
+    .social-pill.instagram { background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af); color: #fff; }
+    .social-pill.tiktok { background: #010101; color: #fff; }
+    .social-pill svg { width: 16px; height: 16px; fill: currentColor; }
+
+    .social-embed {
+      background: var(--cream);
+      border-radius: 12px;
+      padding: 32px;
+      text-align: center;
+      border: 1px solid #e8e8e8;
+    }
+    .fb-embed-area {
+      display: flex;
+      justify-content: center;
+    }
+
+    /* ===== BOOKING ===== */
+    #booking { background: var(--cream); }
+    .booking-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 48px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .booking-card .section-title { margin-bottom: 8px; }
+    .booking-card .section-desc { margin: 0 auto 32px; }
+    .booking-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      text-align: left;
+    }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-group label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gray);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+      padding: 12px 16px;
+      border: 1.5px solid #e0e0e0;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: var(--gray-dark);
+      background: var(--cream);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: var(--green);
+    }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .btn-book {
+      width: 100%;
+      background: var(--green);
+      color: #fff;
+      padding: 16px;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 8px;
+      letter-spacing: 0.5px;
+    }
+    .btn-book:hover { background: var(--green-dark); }
+    .booking-note {
+      font-size: 12px;
+      color: var(--gray);
+      margin-top: 16px;
+      opacity: 0.8;
+    }
+
+    /* ===== CONTACT ===== */
+    #contact { background: var(--white); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .contact-info { display: flex; flex-direction: column; gap: 20px; }
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 18px;
+      background: var(--cream);
+      border-radius: 10px;
+    }
+    .contact-icon {
+      font-size: 22px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .contact-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 4px;
+    }
+    .contact-value {
+      font-size: 14px;
+      color: var(--gray-dark);
+      line-height: 1.5;
+    }
+    .map-embed {
+      border-radius: 12px;
+      overflow: hidden;
+      height: 350px;
+      background: #e0e8d5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--green-dark);
+      font-size: 14px;
+      text-align: center;
+      border: 2px dashed #c0d4a0;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--gray-dark);
+      color: rgba(255,255,255,0.7);
+      padding: 48px 24px 28px;
+    }
+    .footer-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 36px;
+    }
+    .footer-brand .name {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .footer-brand p { font-size: 13px; line-height: 1.7; }
+    .footer-col h4 {
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul li a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      transition: color 0.2s;
+    }
+    .footer-col ul li a:hover { color: #a8d072; }
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+    }
+    .footer-socials { display: flex; gap: 12px; }
+    .footer-social-btn {
+      width: 34px; height: 34px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      transition: background 0.2s;
+    }
+    .footer-social-btn:hover { background: var(--green); }
+
+    /* ===== WHATSAPP FLOAT ===== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 56px;
+      height: 56px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+      z-index: 9999;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 28px rgba(37, 211, 102, 0.6);
+    }
+    .whatsapp-float svg { width: 28px; height: 28px; fill: #fff; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      nav { padding: 12px 20px; }
+      .nav-links { display: none; }
+      .about-grid, .contact-grid, .footer-grid { grid-template-columns: 1fr; }
+      .about-img-accent { display: none; }
+      .rooms-grid { grid-template-columns: 1fr 1fr; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .gallery-item:first-child { grid-row: auto; }
+      .booking-form { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    @media (max-width: 560px) {
+      section { padding: 56px 16px; }
+      .rooms-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; height: auto; }
+      .hero-btns { flex-direction: column; align-items: center; }
+      .social-header { flex-direction: column; gap: 20px; align-items: flex-start; }
+      .booking-card { padding: 28px 20px; }
+      .lang-btn { font-size: 11px; padding: 3px 8px; }
+    }
+
+    /* ===== HIDDEN TRANSLATIONS ===== */
+    [data-lang] { display: none; }
+    [data-lang="it"] { display: block; }
+    span[data-lang] { display: none; }
+    span[data-lang="it"] { display: inline; }
+  </style>
+</head>
+<body>
+
+<!-- LANGUAGE BAR -->
+<div id="lang-bar">
+  <button class="lang-btn active" onclick="setLang('it')">🇮🇹 IT</button>
+  <button class="lang-btn" onclick="setLang('es')">🇪🇸 ES</button>
+  <button class="lang-btn" onclick="setLang('en')">🇬🇧 EN</button>
+</div>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-logo">
+    <!-- Logo: sostituisci src con il percorso reale del tuo logo -->
+    <div style="width:52px;height:52px;background:var(--green-light);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:28px;">🌳</div>
+    <div class="nav-logo-text">
+      <span class="name">Alyse House</span>
+      <span class="sub">Bed &amp; Breakfast</span>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">
+      <span data-lang="it">Chi Siamo</span>
+      <span data-lang="es">Nosotros</span>
+      <span data-lang="en">About</span>
+    </a></li>
+    <li><a href="#rooms">
+      <span data-lang="it">Camere</span>
+      <span data-lang="es">Habitaciones</span>
+      <span data-lang="en">Rooms</span>
+    </a></li>
+    <li><a href="#gallery">
+      <span data-lang="it">Galleria</span>
+      <span data-lang="es">Galería</span>
+      <span data-lang="en">Gallery</span>
+    </a></li>
+    <li><a href="#social">
+      <span data-lang="it">Social</span>
+      <span data-lang="es">Redes</span>
+      <span data-lang="en">Social</span>
+    </a></li>
+    <li><a href="#contact">
+      <span data-lang="it">Contatti</span>
+      <span data-lang="es">Contacto</span>
+      <span data-lang="en">Contact</span>
+    </a></li>
+    <li><a href="#booking" class="nav-cta">
+      <span data-lang="it">Prenota</span>
+      <span data-lang="es">Reservar</span>
+      <span data-lang="en">Book Now</span>
+    </a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span data-lang="it">✦ Bed &amp; Breakfast · Massagno, Ticino ✦</span>
+      <span data-lang="es">✦ Bed &amp; Breakfast · Massagno, Ticino ✦</span>
+      <span data-lang="en">✦ Bed &amp; Breakfast · Massagno, Ticino ✦</span>
+    </div>
+    <h1 class="hero-title">Alyse House</h1>
+    <p class="hero-subtitle">
+      <span data-lang="it">Se stai cercando un'esperienza di vacanza perfetta con ricordi da custodire, sei nel posto giusto.</span>
+      <span data-lang="es">Si estás buscando una experiencia de vacaciones perfecta con recuerdos que guardar, estás en el lugar correcto.</span>
+      <span data-lang="en">If you're looking for a perfect vacation experience with memories to cherish, you've come to the right place.</span>
+    </p>
+    <p class="hero-location">
+      📍 Massagno <span>·</span> Svizzera <span>·</span> 6900
+    </p>
+    <div class="hero-btns">
+      <a href="#booking" class="btn-primary">
+        <span data-lang="it">📅 Prenota Ora</span>
+        <span data-lang="es">📅 Reservar Ahora</span>
+        <span data-lang="en">📅 Book Now</span>
+      </a>
+      <a href="#gallery" class="btn-outline">
+        <span data-lang="it">📸 Vedi la Galleria</span>
+        <span data-lang="es">📸 Ver Galería</span>
+        <span data-lang="en">📸 View Gallery</span>
+      </a>
+    </div>
+  </div>
+  <div class="scroll-indicator">Scroll</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap">
+        <img class="about-img-main"
+          src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=800&q=80&auto=format"
+          alt="Alyse House Interior">
+        <img class="about-img-accent"
+          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80&auto=format"
+          alt="Ticino landscape">
+      </div>
+      <div>
+        <p class="section-label">
+          <span data-lang="it">La Nostra Storia</span>
+          <span data-lang="es">Nuestra Historia</span>
+          <span data-lang="en">Our Story</span>
+        </p>
+        <h2 class="section-title">
+          <span data-lang="it">Un angolo di paradiso a Massagno</span>
+          <span data-lang="es">Un rincón de paraíso en Massagno</span>
+          <span data-lang="en">A corner of paradise in Massagno</span>
+        </h2>
+        <div class="divider"></div>
+        <p class="section-desc">
+          <span data-lang="it">Alyse House Bed &amp; Breakfast si trova nel cuore di Massagno, a pochi passi da Lugano e dalle incantevoli rive del Lago. Il nostro B&amp;B offre camere confortevoli e accoglienti, colazione genuina e un ambiente familiare dove ogni ospite si sente a casa. Siamo aperti tutto l'anno e vi aspettiamo con calore.</span>
+          <span data-lang="es">Alyse House Bed &amp; Breakfast se encuentra en el corazón de Massagno, a pocos pasos de Lugano y las encantadoras orillas del Lago. Nuestro B&amp;B ofrece habitaciones cómodas y acogedoras, desayuno casero y un ambiente familiar donde cada huésped se siente como en casa. Estamos abiertos todo el año y te esperamos con los brazos abiertos.</span>
+          <span data-lang="en">Alyse House Bed &amp; Breakfast is located in the heart of Massagno, just steps from Lugano and the enchanting shores of the Lake. Our B&amp;B offers comfortable and cozy rooms, homemade breakfast and a family atmosphere where every guest feels at home. We're open all year round and welcome you warmly.</span>
+        </p>
+        <div class="about-stats">
+          <div class="stat">
+            <div class="stat-num">⭐</div>
+            <div class="stat-label">
+              <span data-lang="it">Ospiti felici</span>
+              <span data-lang="es">Huéspedes felices</span>
+              <span data-lang="en">Happy guests</span>
+            </div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">🏔️</div>
+            <div class="stat-label">
+              <span data-lang="it">Vicino al lago</span>
+              <span data-lang="es">Cerca del lago</span>
+              <span data-lang="en">Near the lake</span>
+            </div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">🍳</div>
+            <div class="stat-label">
+              <span data-lang="it">Colazione inclusa</span>
+              <span data-lang="es">Desayuno incluido</span>
+              <span data-lang="en">Breakfast included</span>
+            </div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">🛏️</div>
+            <div class="stat-label">
+              <span data-lang="it">Camere confort</span>
+              <span data-lang="es">Habitaciones confort</span>
+              <span data-lang="en">Comfort rooms</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROOMS -->
+<section id="rooms">
+  <div class="container">
+    <p class="section-label">
+      <span data-lang="it">Le Nostre Camere</span>
+      <span data-lang="es">Nuestras Habitaciones</span>
+      <span data-lang="en">Our Rooms</span>
+    </p>
+    <h2 class="section-title">
+      <span data-lang="it">Comfort e serenità per il tuo soggiorno</span>
+      <span data-lang="es">Confort y serenidad para tu estadía</span>
+      <span data-lang="en">Comfort and serenity for your stay</span>
+    </h2>
+    <div class="divider"></div>
+    <div class="rooms-grid">
+
+      <div class="room-card">
+        <img class="room-img"
+          src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80&auto=format"
+          alt="Camera Singola">
+        <div class="room-info">
+          <h3 class="room-name">
+            <span data-lang="it">Camera Singola</span>
+            <span data-lang="es">Habitación Individual</span>
+            <span data-lang="en">Single Room</span>
+          </h3>
+          <p class="room-desc">
+            <span data-lang="it">Ideale per viaggiatori soli. Accogliente, luminosa e silenziosa.</span>
+            <span data-lang="es">Ideal para viajeros solos. Acogedora, luminosa y tranquila.</span>
+            <span data-lang="en">Ideal for solo travelers. Cozy, bright and quiet.</span>
+          </p>
+          <div class="room-amenities">
+            <span class="amenity-tag">WiFi</span>
+            <span class="amenity-tag">
+              <span data-lang="it">Aria condizionata</span>
+              <span data-lang="es">Aire acondicionado</span>
+              <span data-lang="en">Air conditioning</span>
+            </span>
+            <span class="amenity-tag">TV</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="room-card">
+        <img class="room-img"
+          src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=600&q=80&auto=format"
+          alt="Camera Doppia">
+        <div class="room-info">
+          <h3 class="room-name">
+            <span data-lang="it">Camera Doppia</span>
+            <span data-lang="es">Habitación Doble</span>
+            <span data-lang="en">Double Room</span>
+          </h3>
+          <p class="room-desc">
+            <span data-lang="it">Spaziosa e confortevole per coppie o amici in viaggio insieme.</span>
+            <span data-lang="es">Espaciosa y cómoda para parejas o amigos que viajan juntos.</span>
+            <span data-lang="en">Spacious and comfortable for couples or friends traveling together.</span>
+          </p>
+          <div class="room-amenities">
+            <span class="amenity-tag">WiFi</span>
+            <span class="amenity-tag">
+              <span data-lang="it">Bagno privato</span>
+              <span data-lang="es">Baño privado</span>
+              <span data-lang="en">Private bath</span>
+            </span>
+            <span class="amenity-tag">TV</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="room-card">
+        <img class="room-img"
+          src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=600&q=80&auto=format"
+          alt="Suite">
+        <div class="room-info">
+          <h3 class="room-name">
+            <span data-lang="it">Suite Familiare</span>
+            <span data-lang="es">Suite Familiar</span>
+            <span data-lang="en">Family Suite</span>
+          </h3>
+          <p class="room-desc">
+            <span data-lang="it">Ampia suite ideale per famiglie con bambini. Tutto lo spazio che cerchi.</span>
+            <span data-lang="es">Amplia suite ideal para familias con niños. Todo el espacio que necesitas.</span>
+            <span data-lang="en">Spacious suite ideal for families with children. All the space you need.</span>
+          </p>
+          <div class="room-amenities">
+            <span class="amenity-tag">WiFi</span>
+            <span class="amenity-tag">
+              <span data-lang="it">Cucina</span>
+              <span data-lang="es">Cocina</span>
+              <span data-lang="en">Kitchen</span>
+            </span>
+            <span class="amenity-tag">
+              <span data-lang="it">Armadio</span>
+              <span data-lang="es">Armario</span>
+              <span data-lang="en">Wardrobe</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="container">
+    <p class="section-label">
+      <span data-lang="it">Galleria Foto</span>
+      <span data-lang="es">Galería de Fotos</span>
+      <span data-lang="en">Photo Gallery</span>
+    </p>
+    <h2 class="section-title">
+      <span data-lang="it">Scopri gli spazi di Alyse House</span>
+      <span data-lang="es">Descubre los espacios de Alyse House</span>
+      <span data-lang="en">Discover Alyse House spaces</span>
+    </h2>
+    <div class="divider"></div>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=800&q=80&auto=format" alt="Interior">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80&auto=format" alt="Room">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=600&q=80&auto=format" alt="Double Room">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1567538096621-38d2284b23ff?w=600&q=80&auto=format" alt="Bathroom">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80&auto=format" alt="Ticino">
+        <div class="gallery-overlay"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <p class="section-label">
+      <span data-lang="it">I Nostri Servizi</span>
+      <span data-lang="es">Nuestros Servicios</span>
+      <span data-lang="en">Our Services</span>
+    </p>
+    <h2 class="section-title">
+      <span data-lang="it">Tutto quello di cui hai bisogno</span>
+      <span data-lang="es">Todo lo que necesitas</span>
+      <span data-lang="en">Everything you need</span>
+    </h2>
+    <div class="divider"></div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🍳</div>
+        <div class="service-name">
+          <span data-lang="it">Colazione</span>
+          <span data-lang="es">Desayuno</span>
+          <span data-lang="en">Breakfast</span>
+        </div>
+        <p class="service-desc">
+          <span data-lang="it">Colazione genuina ogni mattina, prodotti freschi e locali.</span>
+          <span data-lang="es">Desayuno casero cada mañana, productos frescos y locales.</span>
+          <span data-lang="en">Homemade breakfast every morning, fresh and local products.</span>
+        </p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📶</div>
+        <div class="service-name">WiFi</div>
+        <p class="service-desc">
+          <span data-lang="it">Connessione WiFi gratuita e veloce in tutta la struttura.</span>
+          <span data-lang="es">Conexión WiFi gratuita y rápida en toda la propiedad.</span>
+          <span data-lang="en">Free and fast WiFi throughout the property.</span>
+        </p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🧹</div>
+        <div class="service-name">
+          <span data-lang="it">Pulizie</span>
+          <span data-lang="es">Limpieza</span>
+          <span data-lang="en">Housekeeping</span>
+        </div>
+        <p class="service-desc">
+          <span data-lang="it">Pulizia quotidiana delle camere con prodotti naturali.</span>
+          <span data-lang="es">Limpieza diaria de habitaciones con productos naturales.</span>
+          <span data-lang="en">Daily room cleaning with natural products.</span>
+        </p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🗺️</div>
+        <div class="service-name">
+          <span data-lang="it">Posizione</span>
+          <span data-lang="es">Ubicación</span>
+          <span data-lang="en">Location</span>
+        </div>
+        <p class="service-desc">
+          <span data-lang="it">A pochi minuti da Lugano, lago e trasporti pubblici.</span>
+          <span data-lang="es">A pocos minutos de Lugano, el lago y el transporte público.</span>
+          <span data-lang="en">Minutes from Lugano, the lake and public transport.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL MEDIA -->
+<section id="social">
+  <div class="container">
+    <div class="social-header">
+      <div>
+        <p class="section-label">
+          <span data-lang="it">Seguici sui Social</span>
+          <span data-lang="es">Síguenos en Redes</span>
+          <span data-lang="en">Follow Us</span>
+        </p>
+        <h2 class="section-title" style="margin-bottom:0">
+          <span data-lang="it">Resta connesso con noi</span>
+          <span data-lang="es">Mantente conectado con nosotros</span>
+          <span data-lang="en">Stay connected with us</span>
+        </h2>
+      </div>
+      <div class="social-platforms">
+        <a href="https://www.facebook.com/profile.php?id=61552748091066" target="_blank" class="social-pill facebook">
+          <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Facebook
+        </a>
+        <a href="#" class="social-pill instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          Instagram
+        </a>
+        <a href="#" class="social-pill tiktok">
+          <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          TikTok
+        </a>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="social-embed">
+      <div class="fb-embed-area">
+        <!-- Facebook Page Plugin -->
+        <div id="fb-root"></div>
+        <div class="fb-page"
+          data-href="https://www.facebook.com/profile.php?id=61552748091066"
+          data-tabs="timeline"
+          data-width="500"
+          data-height="400"
+          data-small-header="true"
+          data-adapt-container-width="true"
+          data-hide-cover="false"
+          data-show-facepile="true">
+          <blockquote cite="https://www.facebook.com/profile.php?id=61552748091066" class="fb-xfbml-parse-ignore">
+            <a href="https://www.facebook.com/profile.php?id=61552748091066">Alyse House B&amp;B</a>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking">
+  <div class="container">
+    <div class="booking-card">
+      <p class="section-label" style="text-align:center">
+        <span data-lang="it">Prenotazione</span>
+        <span data-lang="es">Reservación</span>
+        <span data-lang="en">Reservation</span>
+      </p>
+      <h2 class="section-title">
+        <span data-lang="it">Prenota il tuo soggiorno</span>
+        <span data-lang="es">Reserva tu estadía</span>
+        <span data-lang="en">Book your stay</span>
+      </h2>
+      <div class="divider" style="margin: 16px auto 28px;"></div>
+      <p class="section-desc" style="margin: 0 auto 28px;">
+        <span data-lang="it">Compila il modulo e ti contatteremo entro 24 ore per confermare la disponibilità.</span>
+        <span data-lang="es">Completa el formulario y te contactaremos en 24 horas para confirmar disponibilidad.</span>
+        <span data-lang="en">Fill in the form and we'll contact you within 24 hours to confirm availability.</span>
+      </p>
+      <form class="booking-form" onsubmit="submitBooking(event)">
+        <div class="form-group">
+          <label>
+            <span data-lang="it">Nome e Cognome</span>
+            <span data-lang="es">Nombre y Apellido</span>
+            <span data-lang="en">Full Name</span>
+          </label>
+          <input type="text" placeholder="Mario Rossi" required>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="mario@email.com" required>
+        </div>
+        <div class="form-group">
+          <label>
+            <span data-lang="it">Check-in</span>
+            <span data-lang="es">Llegada</span>
+            <span data-lang="en">Check-in</span>
+          </label>
+          <input type="date" required>
+        </div>
+        <div class="form-group">
+          <label>
+            <span data-lang="it">Check-out</span>
+            <span data-lang="es">Salida</span>
+            <span data-lang="en">Check-out</span>
+          </label>
+          <input type="date" required>
+        </div>
+        <div class="form-group">
+          <label>
+            <span data-lang="it">Tipo di Camera</span>
+            <span data-lang="es">Tipo de Habitación</span>
+            <span data-lang="en">Room Type</span>
+          </label>
+          <select>
+            <option value="">
+              <span data-lang="it">Seleziona...</span>
+              <span data-lang="es">Selecciona...</span>
+              <span data-lang="en">Select...</span>
+            </option>
+            <option value="single">
+              <span data-lang="it">Camera Singola</span>
+              <span data-lang="es">Individual</span>
+              <span data-lang="en">Single</span>
+            </option>
+            <option value="double">
+              <span data-lang="it">Camera Doppia</span>
+              <span data-lang="es">Doble</span>
+              <span data-lang="en">Double</span>
+            </option>
+            <option value="family">
+              <span data-lang="it">Suite Familiare</span>
+              <span data-lang="es">Familiar</span>
+              <span data-lang="en">Family Suite</span>
+            </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>
+            <span data-lang="it">Numero di Ospiti</span>
+            <span data-lang="es">Número de Huéspedes</span>
+            <span data-lang="en">Number of Guests</span>
+          </label>
+          <select>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4+</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label>
+            <span data-lang="it">Note / Richieste speciali</span>
+            <span data-lang="es">Notas / Solicitudes especiales</span>
+            <span data-lang="en">Notes / Special requests</span>
+          </label>
+          <textarea placeholder="..."></textarea>
+        </div>
+        <div class="form-group full">
+          <button type="submit" class="btn-book">
+            <span data-lang="it">✉️ Invia Richiesta di Prenotazione</span>
+            <span data-lang="es">✉️ Enviar Solicitud de Reserva</span>
+            <span data-lang="en">✉️ Send Booking Request</span>
+          </button>
+        </div>
+      </form>
+      <p class="booking-note">
+        <span data-lang="it">🔒 I tuoi dati sono al sicuro. Risponderemo entro 24 ore.</span>
+        <span data-lang="es">🔒 Tus datos están seguros. Responderemos en 24 horas.</span>
+        <span data-lang="en">🔒 Your data is safe. We'll reply within 24 hours.</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <p class="section-label">
+      <span data-lang="it">Contattaci</span>
+      <span data-lang="es">Contáctanos</span>
+      <span data-lang="en">Contact Us</span>
+    </p>
+    <h2 class="section-title">
+      <span data-lang="it">Siamo qui per te</span>
+      <span data-lang="es">Estamos aquí para ti</span>
+      <span data-lang="en">We're here for you</span>
+    </h2>
+    <div class="divider"></div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-label">
+              <span data-lang="it">Indirizzo</span>
+              <span data-lang="es">Dirección</span>
+              <span data-lang="en">Address</span>
+            </div>
+            <div class="contact-value">Massagno, Switzerland 6900<br>Cantone Ticino</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">💬</div>
+          <div>
+            <div class="contact-label">WhatsApp</div>
+            <div class="contact-value">
+              <a href="https://wa.me/41000000000" style="color:var(--green); font-weight:600;">+41 — (da aggiornare)</a><br>
+              <span style="font-size:12px; color:var(--gray);">
+                <span data-lang="it">Disponibili tutti i giorni</span>
+                <span data-lang="es">Disponibles todos los días</span>
+                <span data-lang="en">Available every day</span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🌐</div>
+          <div>
+            <div class="contact-label">Website</div>
+            <div class="contact-value">
+              <a href="https://alysehouse.com" target="_blank" style="color:var(--green); font-weight:600;">alysehouse.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📘</div>
+          <div>
+            <div class="contact-label">Facebook</div>
+            <div class="contact-value">
+              <a href="https://www.facebook.com/profile.php?id=61552748091066" target="_blank" style="color:var(--green); font-weight:600;">Alyse House B&amp;B</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="map-embed">
+          <div>
+            <div style="font-size:48px; margin-bottom:12px;">🗺️</div>
+            <strong>Massagno, Svizzera</strong><br>
+            <span style="font-size:12px; opacity:0.7; display:block; margin-top:6px;">
+              <span data-lang="it">Mappa Google Maps — da inserire</span>
+              <span data-lang="es">Mapa Google Maps — por insertar</span>
+              <span data-lang="en">Google Maps — to be inserted</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="name">Alyse House B&amp;B</div>
+      <p>
+        <span data-lang="it">Bed &amp; Breakfast a Massagno, Ticino, Svizzera. Un'esperienza autentica tra natura e comfort.</span>
+        <span data-lang="es">Bed &amp; Breakfast en Massagno, Ticino, Suiza. Una experiencia auténtica entre naturaleza y confort.</span>
+        <span data-lang="en">Bed &amp; Breakfast in Massagno, Ticino, Switzerland. An authentic experience between nature and comfort.</span>
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>
+        <span data-lang="it">Navigazione</span>
+        <span data-lang="es">Navegación</span>
+        <span data-lang="en">Navigation</span>
+      </h4>
+      <ul>
+        <li><a href="#about">
+          <span data-lang="it">Chi Siamo</span>
+          <span data-lang="es">Nosotros</span>
+          <span data-lang="en">About</span>
+        </a></li>
+        <li><a href="#rooms">
+          <span data-lang="it">Camere</span>
+          <span data-lang="es">Habitaciones</span>
+          <span data-lang="en">Rooms</span>
+        </a></li>
+        <li><a href="#gallery">
+          <span data-lang="it">Galleria</span>
+          <span data-lang="es">Galería</span>
+          <span data-lang="en">Gallery</span>
+        </a></li>
+        <li><a href="#booking">
+          <span data-lang="it">Prenota</span>
+          <span data-lang="es">Reservar</span>
+          <span data-lang="en">Book</span>
+        </a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Social</h4>
+      <ul>
+        <li><a href="https://www.facebook.com/profile.php?id=61552748091066" target="_blank">📘 Facebook</a></li>
+        <li><a href="#">📷 Instagram</a></li>
+        <li><a href="#">🎵 TikTok</a></li>
+        <li><a href="https://alysehouse.com" target="_blank">🌐 alysehouse.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Alyse House B&B · Massagno, Switzerland</span>
+    <div class="footer-socials">
+      <a href="https://www.facebook.com/profile.php?id=61552748091066" class="footer-social-btn">📘</a>
+      <a href="#" class="footer-social-btn">📷</a>
+      <a href="#" class="footer-social-btn">🎵</a>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOATING BUTTON -->
+<a href="https://wa.me/41000000000" class="whatsapp-float" target="_blank" title="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- FACEBOOK SDK -->
+<script async defer crossorigin="anonymous"
+  src="https://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v19.0">
+</script>
+
+<!-- JAVASCRIPT -->
+<script>
+  // ===== LANGUAGE SWITCHER =====
+  let currentLang = 'it';
+
+  function setLang(lang) {
+    currentLang = lang;
+    // Update html lang attribute
+    document.documentElement.lang = lang;
+    // Show/hide all lang elements
+    document.querySelectorAll('[data-lang]').forEach(el => {
+      if (el.getAttribute('data-lang') === lang) {
+        el.style.display = el.tagName === 'SPAN' ? 'inline' : 'block';
+      } else {
+        el.style.display = 'none';
+      }
+    });
+    // Update active button
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.textContent.toLowerCase().includes(lang));
+    });
+  }
+
+  // Init on load
+  setLang('it');
+
+  // ===== BOOKING FORM =====
+  function submitBooking(e) {
+    e.preventDefault();
+    const msgs = {
+      it: '✅ Grazie! Ti contatteremo entro 24 ore per confermare la prenotazione.',
+      es: '✅ ¡Gracias! Te contactaremos en 24 horas para confirmar la reserva.',
+      en: '✅ Thank you! We\'ll contact you within 24 hours to confirm your booking.'
+    };
+    alert(msgs[currentLang]);
+  }
+
+  // ===== SMOOTH ACTIVE NAV =====
+  const sections = document.querySelectorAll('section[id]');
+  window.addEventListener('scroll', () => {
+    let scrollY = window.pageYOffset;
+    sections.forEach(sec => {
+      const sectionTop = sec.offsetTop - 120;
+      const sectionHeight = sec.offsetHeight;
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        document.querySelectorAll('.nav-links a').forEach(a => {
+          a.style.color = '';
+          if (a.getAttribute('href') === '#' + sec.id) {
+            a.style.color = 'var(--green)';
+          }
+        });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
